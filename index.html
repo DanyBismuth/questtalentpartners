@@ -1,98 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quest Talent Partners - Talents IT pour ESN & Startups</title>
-  <meta name="description" content="Apporteur d'affaires IT - Missions stables pour freelances et ESN/startups">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',sans-serif; background:#f9fafb; color:#1f2937; line-height:1.6; }
-    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
-    header { min-height:100vh; display:flex; align-items:center; background:linear-gradient(to right,#f9fafb 0%,#dbeafe 100%); }
-    .hero { text-align:center; }
-    .hero h1 { font-size:5rem; font-weight:700; margin-bottom:1rem; color:#1e40af; }
-    .hero p { font-size:1.8rem; margin-bottom:3rem; color:#4b5563; max-width:800px; margin-left:auto; margin-right:auto; }
-    .btn { display:inline-block; padding:18px 48px; background:#3b82f6; color:white; text-decoration:none; border-radius:12px; font-weight:600; font-size:1.2rem; transition:0.3s; box-shadow:0 8px 20px rgba(59,130,246,0.3); }
-    .btn:hover { background:#2563eb; transform:translateY(-4px); box-shadow:0 12px 30px rgba(59,130,246,0.4); }
-    section { padding:120px 0; }
-    h2 { font-size:3.5rem; text-align:center; margin-bottom:4rem; color:#1e40af; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; }
-    .card { background:white; padding:50px; border-radius:20px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.05); transition:0.4s; }
-    .card:hover { transform:translateY(-15px); box-shadow:0 25px 50px rgba(59,130,246,0.2); }
-    .card h3 { margin-bottom:1.5rem; font-size:2rem; color:#3b82f6; }
-    footer { background:#1e293b; padding:80px 0; text-align:center; color:white; }
-    footer a { color:#60a5fa; text-decoration:none; margin:0 20px; font-weight:600; }
-    @media (max-width:768px) { .hero h1 { font-size:3.5rem; } .hero p { font-size:1.4rem; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Talent Partners | Expert Recrutement IT & Systèmes Embarqués</title>
+    <style>
+        :root {
+            --primary: #0047AB; /* Bleu professionnel */
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --accent: #00D4FF;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--dark); line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80'); 
+                background-size: cover; color: white; padding: 100px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; }
+        .stats { display: flex; justify-content: space-around; padding: 50px 5%; background: var(--primary); color: white; }
+        .stat-item { text-align: center; }
+        .stat-item h2 { font-size: 2.5rem; margin: 0; }
+        .services { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; transition: 0.3s; }
+        .card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--primary); }
+        .cta-button { background: var(--accent); color: var(--dark); padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; }
+        footer { background: var(--dark); color: white; text-align: center; padding: 2rem; }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container hero">
-      <h1>Quest Talent Partners</h1>
-      <p>Talents IT pour ESN et startups – Missions stables et récurrentes</p>
-      <a href="mailto:contact@questtalentpartners.fr" class="btn">Me contacter</a>
-    </div>
-  </header>
 
-  <section>
-    <div class="container">
-      <h2>Spécialités IT</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Development</h3>
-          <p>Java, .NET, Full Stack, Frontend/Backend – tous langages et frameworks</p>
-        </div>
-        <div class="card">
-          <h3>DevOps & Cloud</h3>
-          <p>AWS, Azure, Kubernetes, CI/CD – infrastructure scalable</p>
-        </div>
-        <div class="card">
-          <h3>Data & IA</h3>
-          <p>Python, SQL, Machine Learning, Big Data – intelligence des données</p>
-        </div>
-        <div class="card">
-          <h3>Cyber & Sécurité</h3>
-          <p>CISSP, Pentest, Compliance – protection des systèmes</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<header>
+    <div class="logo"><strong>QUEST</strong> TALENT PARTNERS</div>
+    <nav>
+        <a href="mailto:dany.bismuth@questtalentpartners.fr" style="color:white; text-decoration:none;">Contact</a>
+    </nav>
+</header>
 
-  <section style="background:#f0f4f8;">
-    <div class="container">
-      <h2>Pour les freelances</h2>
-      <p style="text-align:center;max-width:700px;margin:0 auto 40px;font-size:1.3rem;">
-        Vous cherchez une mission stable en IT ? Je vous place rapidement chez des ESN et startups solides.
-      </p>
-      <div style="text-align:center;">
-        <a href="https://forms.gle/XXXXX" class="btn">Je postule</a>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+    <h1>Sécurisez vos talents IT critiques</h1>
+    <p>Expert en recrutement de profils pénuriques (Embedded, Cloud, DevOps) avec plus de 6 ans d'expérience internationale[cite: 5, 6].</p>
+    <a href="#contact" class="cta-button">Demander un diagnostic de recrutement</a>
+</section>
 
-  <section>
-    <div class="container">
-      <h2>Pour les ESN & startups</h2>
-      <p style="text-align:center;max-width:700px;margin:0 auto 40px;font-size:1.3rem;">
-        Besoin d'un talent IT rare ? Je source et place les meilleurs.
-      </p>
-      <div style="text-align:center;">
-        <a href="mailto:contact@questtalentpartners.fr" class="btn">Nous contacter</a>
-      </div>
+<section class="stats">
+    <div class="stat-item">
+        <h2>280k €</h2>
+        <p>Économies annuelles générées pour un client </p>
     </div>
-  </section>
+    <div class="stat-item">
+        <h2>85%</h2>
+        <p>Taux d'acceptation des dossiers </p>
+    </div>
+    <div class="stat-item">
+        <h2>6+ Ans</h2>
+        <p>D'expertise en Talent Acquisition [cite: 5]</p>
+    </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Quest Talent Partners</p>
-      <p>
-        <a href="mailto:dany.bismuth@questtalentpartners.fr">dany.bismuth@questtalentpartners.fr</a> • 
-        <a href="mailto:contact@questtalentpartners.fr">contact@questtalentpartners.fr</a>
-      </p>
-      <p><a href="https://linkedin.com/in/tonprofil">LinkedIn</a></p>
+<section class="services">
+    <div class="card">
+        <h3>Systèmes Embarqués</h3>
+        <p>Recrutement d'ingénieurs software embedded et spécialistes Q&A.</p>
     </div>
-  </footer>
+    <div class="card">
+        <h3>Cloud & DevOps</h3>
+        <p>Identification de profils critiques : AWS, Azure, Kubernetes[cite: 14].</p>
+    </div>
+    <div class="card">
+        <h3>Data & IA</h3>
+        <p>Sourcing de Data Engineers et spécialistes Python/Machine Learning[cite: 14, 21].</p>
+    </div>
+</section>
+
+<section id="contact" style="padding: 50px 5%; text-align: center; background: var(--light);">
+    <h2>Prêt à trouver votre prochain talent ?</h2>
+    <p>Échangeons sur vos besoins lors d'un appel de 15 minutes.</p>
+    <a href="mailto:dany.bismuth@questtalentpartners.fr" class="cta-button" style="background: var(--primary); color: white;">Me contacter par email</a>
+</section>
+
+<footer>
+    <p>&copy; 2025 Quest Talent Partners - Dany Bismuth [cite: 1, 9]</p>
+    <p>Paris, France | +33 6 37 88 16 24 [cite: 2]</p>
+</footer>
+
 </body>
 </html>
