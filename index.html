@@ -1,130 +1,1043 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quest Talent Partners - Talents IT pour ESN & Startups</title>
-  <meta name="description" content="Apporteur d'affaires IT - Missions stables pour freelances et ESN/startups">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',sans-serif; background:#f9fafb; color:#1f2937; line-height:1.6; }
-    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
-    header { min-height:100vh; display:flex; align-items:center; background:linear-gradient(to right,#f9fafb 0%,#dbeafe 100%); }
-    .hero { text-align:center; }
-    .hero h1 { font-size:5rem; font-weight:700; margin-bottom:1rem; color:#1e40af; }
-    .hero p { font-size:1.8rem; margin-bottom:3rem; color:#4b5563; max-width:800px; margin-left:auto; margin-right:auto; }
-    .btn { display:inline-block; padding:18px 48px; background:#3b82f6; color:white; text-decoration:none; border-radius:12px; font-weight:600; font-size:1.2rem; transition:0.3s; box-shadow:0 8px 20px rgba(59,130,246,0.3); }
-    .btn:hover { background:#2563eb; transform:translateY(-4px); box-shadow:0 12px 30px rgba(59,130,246,0.4); }
-    section { padding:120px 0; }
-    h2 { font-size:3.5rem; text-align:center; margin-bottom:4rem; color:#1e40af; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; }
-    .card { background:white; padding:50px; border-radius:20px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.05); transition:0.4s; }
-    .card:hover { transform:translateY(-15px); box-shadow:0 25px 50px rgba(59,130,246,0.2); }
-    .card h3 { margin-bottom:1.5rem; font-size:2rem; color:#3b82f6; }
-    .stats { background:#e0e7ff; padding:80px 0; }
-    .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; text-align:center; }
-    .stat-item h3 { font-size:2.5rem; color:#1e40af; }
-    .about { background:#f0f4f8; padding:100px 0; }
-    footer { background:#1e293b; padding:80px 0; text-align:center; color:white; }
-    footer a { color:#60a5fa; text-decoration:none; margin:0 20px; font-weight:600; }
-    @media (max-width:768px) { .hero h1 { font-size:3.5rem; } .hero p { font-size:1.4rem; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Talent Partners - Design Ultra-Moderne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0A0B0E;
+            --darker: #050607;
+            --accent: #00FFA3;
+            --accent-purple: #B600FF;
+            --accent-blue: #00E0FF;
+            --text: #E8E9ED;
+            --text-muted: #9CA3AF;
+            --card-bg: #13151A;
+            --border: rgba(255, 255, 255, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ANIMATED BACKGROUND */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(182, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 255, 163, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 224, 255, 0.1) 0%, transparent 60%);
+        }
+
+        .section {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid rgba(0, 255, 163, 0.2);
+            border-radius: 4px;
+            background: rgba(0, 255, 163, 0.05);
+        }
+
+        .section-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* PRICING SECTION - ULTRA MODERN */
+        .pricing-section {
+            position: relative;
+        }
+
+        .pricing-glow {
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 163, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+            position: relative;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(0, 255, 163, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .pricing-card:hover::before {
+            opacity: 1;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 255, 163, 0.3);
+            box-shadow: 
+                0 0 0 1px rgba(0, 255, 163, 0.1),
+                0 20px 60px rgba(0, 255, 163, 0.2);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, rgba(182, 0, 255, 0.1) 0%, rgba(0, 255, 163, 0.1) 100%);
+            border: 1px solid rgba(0, 255, 163, 0.3);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured .pricing-badge {
+            display: block;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: none;
+        }
+
+        .pricing-type {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .pricing-amount {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -3px;
+        }
+
+        .pricing-details {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .pricing-features li {
+            padding: 14px 0;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-features li:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .pricing-features li::before {
+            content: '→';
+            margin-right: 16px;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-guarantee {
+            margin-top: 80px;
+            padding: 40px;
+            background: rgba(0, 255, 163, 0.05);
+            border: 1px solid rgba(0, 255, 163, 0.2);
+            border-left: 4px solid var(--accent);
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .pricing-guarantee::before {
+            content: '🛡️';
+            font-size: 2rem;
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            background: var(--card-bg);
+            padding: 0 12px;
+        }
+
+        .pricing-guarantee strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* PROCESS SECTION - TIMELINE MODERNE */
+        .process-section {
+            position: relative;
+        }
+
+        .process-timeline {
+            position: relative;
+            padding-left: 80px;
+            margin-top: 80px;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+        }
+
+        .process-step {
+            position: relative;
+            margin-bottom: 80px;
+            padding: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .process-step:hover {
+            border-color: rgba(0, 255, 163, 0.3);
+            transform: translateX(8px);
+        }
+
+        .step-number {
+            position: absolute;
+            left: -60px;
+            top: 40px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 100%);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 0 30px rgba(0, 255, 163, 0.4);
+        }
+
+        .step-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .step-info {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .step-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .step-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(0, 255, 163, 0.1);
+            border: 1px solid rgba(0, 255, 163, 0.2);
+            color: var(--accent);
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            align-self: flex-start;
+        }
+
+        /* WHY US SECTION - BENTO GRID */
+        .why-us-section {
+            position: relative;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-top: 80px;
+        }
+
+        .advantage-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .advantage-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(0, 255, 163, 0.1) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .advantage-card:hover::after {
+            opacity: 1;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 163, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .advantage-icon {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            display: block;
+            filter: grayscale(0) brightness(1.2);
+        }
+
+        .advantage-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .advantage-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .advantage-stat {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CTA SECTION - HERO STYLE */
+        .cta-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 100px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: 120px 0;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(182, 0, 255, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(0, 255, 163, 0.2) 0%, transparent 40%);
+            animation: rotateGradient 20s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+            letter-spacing: -3px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 48px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            font-family: 'Sora', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 100%);
+            color: var(--dark);
+            box-shadow: 0 0 40px rgba(0, 255, 163, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 60px rgba(0, 255, 163, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -2px;
+        }
+
+        .trust-badge-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        /* GLASS CARD EFFECT */
+        .glass-card {
+            background: rgba(19, 21, 26, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* HEADER / NAVBAR */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(5, 6, 7, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .header-contact {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .header-contact:hover {
+            color: var(--accent);
+        }
+
+        .header-btn {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 100%);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 163, 0.2);
+        }
+
+        .header-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 255, 163, 0.4);
+        }
+
+        /* Add padding to first section to account for fixed header */
+        body {
+            padding-top: 90px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 3rem;
+            }
+
+            .pricing-amount {
+                font-size: 4rem;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-contact {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 24px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-amount {
+                font-size: 3rem;
+            }
+
+            .cta-title {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .process-timeline {
+                padding-left: 60px;
+            }
+
+            .step-content {
+                flex-direction: column;
+            }
+
+            .step-time {
+                align-self: flex-start;
+            }
+
+            .trust-badges {
+                gap: 40px;
+            }
+
+            .cta-section {
+                padding: 60px 32px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header-content {
+                padding: 16px 24px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+            }
+
+            body {
+                padding-top: 70px;
+            }
+        }
+
+        /* SCROLL ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container hero">
-      <h1>Quest Talent Partners</h1>
-      <p>Talents IT pour ESN et startups – Missions stables et récurrentes</p>
-      <a href="mailto:contact@questtalentpartners.fr" class="btn">Me contacter</a>
-    </div>
-  </header>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">Q</div>
+                <span class="logo-text">Quest Talent Partners</span>
+            </a>
+            <div class="header-cta">
+                <a href="mailto:contact@questtalentpartners.fr" class="header-contact">contact@questtalentpartners.fr</a>
+                <a href="#cta" class="header-btn">Nous contacter</a>
+            </div>
+        </div>
+    </header>
 
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3>200k €</h3>
-          <p>Économies annuelles générées pour un client</p>
-        </div>
-        <div class="stat-item">
-          <h3>85 %</h3>
-          <p>Taux d'acceptation des dossiers</p>
-        </div>
-        <div class="stat-item">
-          <h3>6+ ans</h3>
-          <p>D'expérience en sourcing IT pénurique</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="animated-bg"></div>
 
-  <section class="about">
-    <div class="container">
-      <h2>Qui suis-je ?</h2>
-      <p style="text-align:center;max-width:800px;margin:0 auto 40px;font-size:1.2rem;">
-        Dany Bismuth, apporteur d'affaires IT avec 6+ ans d'expérience en sourcing de profils pénuriques (Dev, DevOps, Data, QA, Product Owner, Embedded). J'ai placé des talents chez CDC Informatique, QORVO, et plus, avec optimisation budgétaire de 280 000 €/an. Bilingue français/anglais, je garantis un matching parfait pour missions stables.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2>Spécialités IT</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Development</h3>
-          <p>Java, .NET, Full Stack, Frontend/Backend – tous langages et frameworks</p>
+    <!-- SECTION 1: TARIFS TRANSPARENTS -->
+    <section class="section pricing-section">
+        <div class="pricing-glow"></div>
+        
+        <div class="section-header">
+            <span class="section-tag">/// TARIFICATION</span>
+            <h2 class="section-title">Tarifs transparents</h2>
+            <p class="section-subtitle">
+                Paiement au succès uniquement. Vous ne payez que si vous êtes satisfait du placement.
+            </p>
         </div>
-        <div class="card">
-          <h3>DevOps & Cloud</h3>
-          <p>AWS, Azure, Kubernetes, CI/CD – infrastructure scalable</p>
-        </div>
-        <div class="card">
-          <h3>Data & IA</h3>
-          <p>Python, SQL, Machine Learning, Big Data – intelligence des données</p>
-        </div>
-        <div class="card">
-          <h3>Cyber & Sécurité</h3>
-          <p>CISSP, Pentest, Compliance – protection des systèmes</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section style="background:#f0f4f8;">
-    <div class="container">
-      <h2>Pour les freelances</h2>
-      <p style="text-align:center;max-width:700px;margin:0 auto 40px;font-size:1.3rem;">
-        Vous cherchez une mission stable en IT ? Je vous place chez des ESN et startups solides.
-      </p>
-      <div style="text-align:center;">
-        <a href="https://forms.gle/XXXXX" class="btn">Je postule</a>
-      </div>
-    </div>
-  </section>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-type">Freelances</div>
+                <div class="pricing-amount">10%</div>
+                <div class="pricing-details">du TJM pendant toute la mission</div>
+                <ul class="pricing-features">
+                    <li>Profils qualifiés et disponibles</li>
+                    <li>Matching en 24-48h</li>
+                    <li>Support pendant la mission</li>
+                    <li>Remplacement gratuit si besoin</li>
+                </ul>
+            </div>
 
-  <section>
-    <div class="container">
-      <h2>Pour les ESN & startups</h2>
-      <p style="text-align:center;max-width:700px;margin:0 auto 40px;font-size:1.3rem;">
-        Besoin d'un talent IT rare ? Je source et place les meilleurs.
-      </p>
-      <div style="text-align:center;">
-        <a href="mailto:contact@questtalentpartners.fr" class="btn">Nous contacter</a>
-      </div>
-    </div>
-  </section>
+            <div class="pricing-card featured">
+                <div class="pricing-badge">POPULAIRE</div>
+                <div class="pricing-type">CDI / CDD</div>
+                <div class="pricing-amount">20%</div>
+                <div class="pricing-details">du salaire annuel brut (one-time)</div>
+                <ul class="pricing-features">
+                    <li>Sourcing élargi avec IA</li>
+                    <li>Pré-qualification approfondie</li>
+                    <li>Suivi jusqu'à l'intégration</li>
+                    <li>Garantie remplacement 3 mois</li>
+                </ul>
+            </div>
+        </div>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Quest Talent Partners</p>
-      <p>
-        <a href="mailto:dany.bismuth@questtalentpartners.fr">dany.bismuth@questtalentpartners.fr</a> • 
-        <a href="mailto:contact@questtalentpartners.fr">contact@questtalentpartners.fr</a>
-      </p>
-      <p><a href="https://linkedin.com/in/dany-bismuth">LinkedIn</a></p>
+        <div class="pricing-guarantee">
+            <strong>Notre garantie</strong> : Si le candidat quitte ou ne convient pas pendant les 3 premiers mois (CDI) ou 1 mois (mission freelance), nous le remplaçons gratuitement. Zéro risque pour vous.
+        </div>
+    </section>
+
+    <!-- SECTION 2: COMMENT ÇA MARCHE -->
+    <section class="section process-section">
+        <div class="section-header">
+            <span class="section-tag">/// PROCESSUS</span>
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <p class="section-subtitle">
+                Un processus simple et rapide pour trouver le bon talent IT
+            </p>
+        </div>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-info">
+                        <h3 class="step-title">Briefing</h3>
+                        <p class="step-description">
+                            Vous décrivez votre besoin : poste, compétences requises, budget, délais. Un appel de 15 minutes suffit.
+                        </p>
+                    </div>
+                    <span class="step-time">⏱️ 15 min</span>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-info">
+                        <h3 class="step-title">Sourcing IA</h3>
+                        <p class="step-description">
+                            Notre système automatisé scanne 5000+ profils qualifiés et identifie les meilleurs matchs en quelques heures.
+                        </p>
+                    </div>
+                    <span class="step-time">⏱️ 24-48h</span>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-info">
+                        <h3 class="step-title">Shortlist</h3>
+                        <p class="step-description">
+                            Réception de 3-5 profils pré-qualifiés avec CV détaillés, disponibilités et prétentions salariales.
+                        </p>
+                    </div>
+                    <span class="step-time">⏱️ 48-72h</span>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-info">
+                        <h3 class="step-title">Placement</h3>
+                        <p class="step-description">
+                            Vous interviewez, vous choisissez. Nous gérons les négociations et l'onboarding. Facturation à la signature.
+                        </p>
+                    </div>
+                    <span class="step-time">⏱️ 1-2 semaines</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: POURQUOI NOUS -->
+    <section class="section why-us-section">
+        <div class="section-header">
+            <span class="section-tag">/// AVANTAGES</span>
+            <h2 class="section-title">Pourquoi Quest Talent Partners ?</h2>
+            <p class="section-subtitle">
+                La technologie au service du recrutement humain
+            </p>
+        </div>
+
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <span class="advantage-icon">🤖</span>
+                <h3 class="advantage-title">Sourcing IA ultra-rapide</h3>
+                <p class="advantage-description">
+                    Nos workflows automatisés analysent des milliers de profils en quelques heures. Ce qui prendrait 2 semaines à un cabinet classique, nous le faisons en 48h.
+                </p>
+                <div class="advantage-stat">2x plus rapide que la concurrence</div>
+            </div>
+
+            <div class="advantage-card">
+                <span class="advantage-icon">🎯</span>
+                <h3 class="advantage-title">Base de 5000+ talents IT</h3>
+                <p class="advantage-description">
+                    Vivier enrichi quotidiennement avec des profils Dev, DevOps, Data, QA, Product. Profils pénuriques inclus (Rust, Go, Embedded, ML Engineers).
+                </p>
+                <div class="advantage-stat">85% de matching réussi</div>
+            </div>
+
+            <div class="advantage-card">
+                <span class="advantage-icon">💰</span>
+                <h3 class="advantage-title">Coûts réduits de 40%</h3>
+                <p class="advantage-description">
+                    Pas de structure lourde, pas de commerciaux : nos tarifs sont 40% moins chers qu'un cabinet traditionnel. Vous payez l'efficacité, pas le siège social.
+                </p>
+                <div class="advantage-stat">Économies moyennes : 200k€/an</div>
+            </div>
+
+            <div class="advantage-card">
+                <span class="advantage-icon">⚡</span>
+                <h3 class="advantage-title">Réactivité 24-48h</h3>
+                <p class="advantage-description">
+                    Pas de validation hiérarchique, pas de process bureaucratique. Vous avez une urgence ? Nous démarrons le sourcing dans l'heure.
+                </p>
+                <div class="advantage-stat">Réponse garantie sous 2h</div>
+            </div>
+
+            <div class="advantage-card">
+                <span class="advantage-icon">🔒</span>
+                <h3 class="advantage-title">Spécialisation IT exclusive</h3>
+                <p class="advantage-description">
+                    Nous ne faisons QUE de l'IT. Pas de généralistes qui découvrent votre secteur. 6+ ans d'expérience en sourcing de profils techniques pénuriques.
+                </p>
+                <div class="advantage-stat">100% focus tech</div>
+            </div>
+
+            <div class="advantage-card">
+                <span class="advantage-icon">🛡️</span>
+                <h3 class="advantage-title">Garantie remplacement</h3>
+                <p class="advantage-description">
+                    Si le candidat ne convient pas pendant la période d'essai ou quitte dans les 3 mois (CDI) / 1 mois (mission), remplacement gratuit immédiat.
+                </p>
+                <div class="advantage-stat">Zéro risque pour vous</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CTA AMÉLIORÉS -->
+    <section class="section" id="cta">
+        <div class="cta-section glass-card">
+            <div class="cta-content">
+                <h2 class="cta-title">Besoin d'un talent IT ?</h2>
+                <p class="cta-subtitle">
+                    Décrivez votre besoin en 2 minutes et recevez une shortlist qualifiée sous 48h
+                </p>
+
+                <div class="cta-buttons">
+                    <a href="https://calendly.com/questtalentpartners/15min" class="btn btn-primary">
+                        <span>📅</span>
+                        Réserver un appel 15 min
+                    </a>
+                    <a href="mailto:contact@questtalentpartners.fr?subject=Demande%20de%20recrutement&body=Bonjour,%0D%0A%0D%0AJe%20recherche%20:%0D%0A-%20Poste%20:%0D%0A-%20Compétences%20:%0D%0A-%20Type%20:%20CDI%20/%20Freelance%0D%0A-%20Budget%20:%0D%0A-%20Délai%20:%0D%0A%0D%0AMerci%20!" class="btn btn-secondary">
+                        <span>✉️</span>
+                        Décrire mon besoin
+                    </a>
+                </div>
+
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="trust-badge-number">48h</span>
+                        <span class="trust-badge-text">Première shortlist</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-number">85%</span>
+                        <span class="trust-badge-text">Taux de matching</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-number">0€</span>
+                        <span class="trust-badge-text">Si pas de placement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTE D'IMPLÉMENTATION -->
+    <div style="background: rgba(0, 255, 163, 0.1); padding: 40px; margin: 60px 40px; border-left: 4px solid var(--accent); border-radius: 16px; max-width: 1400px; margin-left: auto; margin-right: auto; border: 1px solid rgba(0, 255, 163, 0.2);">
+        <h3 style="color: var(--accent); margin-bottom: 20px; font-size: 1.5rem; font-weight: 700;">📋 Instructions d'intégration</h3>
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem;">
+            <strong style="color: var(--text);">Design ultra-moderne avec :</strong>
+        </p>
+        <!-- <ul style="color: var(--text-muted); line-height: 2; margin-left: 20px; font-size: 1.05rem;">
+            <li>🎨 Thème dark avec accents néon (vert/cyan/violet)</li>
+            <li>✨ Fond animé avec gradients radiaux</li>
+            <li>💎 Effet glassmorphism sur les cards</li>
+            <li>🔥 Animations au hover fluides</li>
+            <li>📱 100% responsive et optimisé mobile</li>
+            <li>⚡ Polices modernes : Sora + JetBrains Mono</li>
+            <li>🌈 Gradients sur les textes et boutons</li>
+        </ul> -->
+        
     </div>
-  </footer>
+
 </body>
 </html>
