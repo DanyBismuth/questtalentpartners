@@ -560,7 +560,7 @@
         <p>Décrivez votre besoin en 2 minutes. Nos consultants prennent le relais et reviennent vers vous avec des profils triés sur le volet.</p>
         <div class="cta-actions">
           <a href="https://questtalentpartners.zohobookings.eu/#/250146000000048054" class="btn-primary" target="_blank">Réserver un appel 15 min →</a>
-          <a href="/cdn-cgi/l/email-protection#167579786277756256676373656262777a7378626677646278736465387064296563747c7375622b52737b777872733324267273332426647375646362737b737862" class="btn-ghost">Décrire mon besoin</a>
+          <a href="/cdn-cgi/l/email-protection#2e4d41405a4f4d5a6e5f5b4b5d5a5a4f424b405a5e4f5c5a404b5c5d00485c115d5b4c444b4d5a136a4b434f404a4b0b1c1e4a4b0b1c1e5c4b4d5c5b5a4b434b405a" class="btn-ghost">Décrire mon besoin</a>
         </div>
       </div>
     </div>
@@ -572,11 +572,16 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Quest<span>.</span> Talent Partners</div>
-  <p><a href="/cdn-cgi/l/email-protection#bfdcd0d1cbdedccbffcecadacccbcbded3dad1cbcfdecdcbd1dacdcc91d9cd"><span class="__cf_email__" data-cfemail="0f6c60617b6e6c7b4f7e7a6a7c7b7b6e636a617b7f6e7d7b616a7d7c21697d">[email&#160;protected]</span></a></p>
+  <p><a id="email-link" href="#" style="color:var(--b3);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--beige)'" onmouseout="this.style.color='var(--b3)'"><span class="__cf_email__" data-cfemail="0d6e6263796c6e794d7c78687e79796c616863797d6c7f7963687f7e236b7f">[email&#160;protected]</span></a></p>
   <p>© 2026 Quest Talent Partners</p>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Email anti-Cloudflare
+  const el = document.getElementById('email-link');
+  const u = 'contact', d = 'questtalentpartners.fr';
+  el.href = 'mailto:' + u + '@' + d;
+
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
