@@ -352,6 +352,102 @@
     footer a { color: var(--b3); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--beige); }
 
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(80, 60, 20, 0.35);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+    .modal-card {
+      background: rgba(255, 252, 248, 0.92);
+      border: 1px solid var(--border-h);
+      backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border-radius: 24px;
+      max-width: 640px; width: 100%;
+      max-height: 92vh; overflow-y: auto;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(80,60,20,0.25), inset 0 2px 0 rgba(255,255,255,1);
+      transform: translateY(20px) scale(0.97); opacity: 0;
+      transition: transform 0.35s, opacity 0.35s;
+    }
+    .modal-overlay.open .modal-card { transform: none; opacity: 1; }
+    .modal-content { padding: 48px clamp(28px, 4vw, 48px); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: transparent; border: 1px solid var(--border);
+      color: var(--beige);
+      width: 36px; height: 36px; border-radius: 50%;
+      font-size: 1.4rem; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .modal-close:hover { background: var(--glass-h); border-color: var(--border-h); }
+    .modal-card h3 {
+      font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1.1; letter-spacing: -0.02em; color: var(--beige);
+      margin-top: 8px;
+    }
+    .modal-card h3 em { font-style: italic; color: var(--b2); }
+    .modal-intro { color: var(--b3); margin-top: 12px; font-size: 0.94rem; line-height: 1.65; margin-bottom: 32px; }
+
+    /* Form */
+    #contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label {
+      font-size: 0.72rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--b2);
+      font-weight: 400;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      background: rgba(255,252,248, 0.55);
+      border: 1px solid var(--border-h);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-family: var(--sans); font-size: 0.94rem;
+      color: var(--beige);
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+      width: 100%;
+    }
+    .field textarea { resize: vertical; min-height: 100px; font-family: var(--sans); }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--beige);
+      background: rgba(255,252,248, 0.85);
+    }
+    .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237a6e5a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+    .form-feedback {
+      margin-top: 12px; padding: 12px 16px;
+      border-radius: 10px; font-size: 0.88rem;
+      display: none;
+    }
+    .form-feedback.success {
+      display: block;
+      background: rgba(100, 160, 100, 0.18);
+      color: #2a5c2a;
+      border: 1px solid rgba(100, 160, 100, 0.35);
+    }
+    .form-feedback.error {
+      display: block;
+      background: rgba(180, 80, 80, 0.15);
+      color: #7a2a2a;
+      border: 1px solid rgba(180, 80, 80, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .modal-content { padding: 36px 22px; }
+    }
+
     /* ── REVEAL ── */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s, transform 0.75s; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -560,19 +656,70 @@
         <p>Décrivez votre besoin en 2 minutes. Nos consultants prennent le relais et reviennent vers vous avec des profils triés sur le volet.</p>
         <div class="cta-actions">
           <a href="https://questtalentpartners.zohobookings.eu/#/250146000000048054" class="btn-primary" target="_blank">Réserver un appel 15 min →</a>
-          <a href="/cdn-cgi/l/email-protection#2e4d41405a4f4d5a6e5f5b4b5d5a5a4f424b405a5e4f5c5a404b5c5d00485c115d5b4c444b4d5a136a4b434f404a4b0b1c1e4a4b0b1c1e5c4b4d5c5b5a4b434b405a" class="btn-ghost">Décrire mon besoin</a>
+          <button type="button" class="btn-ghost" id="open-form" style="border:1px solid var(--border-h); cursor:pointer; font-family:var(--sans);">Décrire mon besoin</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- MODAL FORMSPREE -->
+<div class="modal-overlay" id="modal" aria-hidden="true">
+  <div class="modal-card gcard" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="close-form" aria-label="Fermer">×</button>
+    <div class="modal-content">
+      <div class="section-label">Demande</div>
+      <h3 id="modal-title">Décrivez votre <em>besoin</em></h3>
+      <p class="modal-intro">Remplissez ce formulaire en 2 minutes. Nos consultants reviennent vers vous rapidement.</p>
+
+      <form action="https://formspree.io/f/mwvzkybn" method="POST" id="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="company">Entreprise</label>
+            <input type="text" id="company" name="company" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="type">Type de recrutement</label>
+          <select id="type" name="type" required>
+            <option value="">Sélectionner…</option>
+            <option value="Freelance">Freelance</option>
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+            <option value="Pas encore décidé">Pas encore décidé</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Décrivez votre besoin</label>
+          <textarea id="message" name="message" rows="5" placeholder="Poste, compétences, séniorité, démarrage souhaité…" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" id="submit-btn" style="width:100%; justify-content:center; margin-top:8px;">Envoyer la demande →</button>
+        <p class="form-feedback" id="form-feedback"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Quest<span>.</span> Talent Partners</div>
-  <p><a id="email-link" href="#" style="color:var(--b3);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--beige)'" onmouseout="this.style.color='var(--b3)'"><span class="__cf_email__" data-cfemail="0d6e6263796c6e794d7c78687e79796c616863797d6c7f7963687f7e236b7f">contact@questtalentpartners.fr</span></a></p>
+  <p><a id="email-link" href="#" style="color:var(--b3);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--beige)'" onmouseout="this.style.color='var(--b3)'"><span class="__cf_email__" data-cfemail="294a46475d484a5d69585c4c5a5d5d48454c475d59485b5d474c5b5a074f5b">[email&#160;protected]</span></a></p>
   <p>© 2026 Quest Talent Partners</p>
 </footer>
 
@@ -581,6 +728,53 @@
   const el = document.getElementById('email-link');
   const u = 'contact', d = 'questtalentpartners.fr';
   el.href = 'mailto:' + u + '@' + d;
+
+  // Modal
+  const modal = document.getElementById('modal');
+  const openBtn = document.getElementById('open-form');
+  const closeBtn = document.getElementById('close-form');
+  const openModal = () => { modal.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // Formspree AJAX submission
+  const form = document.getElementById('contact-form');
+  const feedback = document.getElementById('form-feedback');
+  const submitBtn = document.getElementById('submit-btn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours…';
+    feedback.className = 'form-feedback';
+    feedback.textContent = '';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        feedback.className = 'form-feedback success';
+        feedback.textContent = '✓ Merci ! Votre demande a bien été envoyée. Nous revenons vers vous rapidement.';
+        submitBtn.textContent = 'Envoyé ✓';
+      } else {
+        const data = await res.json().catch(() => ({}));
+        feedback.className = 'form-feedback error';
+        feedback.textContent = data.error || "Une erreur est survenue. Réessayez ou écrivez-nous directement.";
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer la demande →';
+      }
+    } catch (err) {
+      feedback.className = 'form-feedback error';
+      feedback.textContent = "Erreur réseau. Réessayez plus tard.";
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Envoyer la demande →';
+    }
+  });
 
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
